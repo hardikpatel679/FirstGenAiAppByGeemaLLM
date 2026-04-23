@@ -1,19 +1,26 @@
 [project]
-name = "workspace"
+name = "firstgenaiappbygeemallm"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "chromadb>=1.5.8",
-    "ipykernel>=6.31.0",
-    "langchain>=0.3.28",
-    "langchain-community>=0.3.31",
+    "ipykernel>=7.2.0",
+    "langchain>=1.2.15",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.2.31",
+    "langchain-groq>=1.1.2",
     "langchain-ollama>=1.1.0",
-    "langgraph>=0.6.11",
+    "langgraph>=1.1.6",
     "langsmith>=0.7.32",
-    "numpy>=2.0.2",
-    "pandas>=2.3.3",
-    "python-dotenv",
+    "numpy>=2.4.4",
+    "pandas>=3.0.2",
+    "python-dotenv>=1.2.2",
     "streamlit>=1.56.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "venv",
 ]

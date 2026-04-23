@@ -9,3 +9,5 @@ chromadb
 langchain-ollama
 streamlit
 langsmith
+langchain_groq
+langchain_core
