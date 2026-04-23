@@ -1,0 +1,11 @@
+langchain
+langgraph
+ipykernel
+numpy
+pandas
+python-dotenv
+langchain-community
+chromadb
+langchain-ollama
+streamlit
+langsmith
