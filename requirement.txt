@@ -11,3 +11,6 @@ streamlit
 langsmith
 langchain_groq
 langchain_core
+fastapi
+uvicorn
+langserve
