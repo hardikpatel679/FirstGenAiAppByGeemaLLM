@@ -11,10 +11,10 @@ groq_api_key = os.getenv("GROQ_API_KEY")
 groq_gemma2_llm = ChatGroq(model="llama-3.1-8b-instant", api_key=groq_api_key)
 
 
-system_tamplate = "Translate the following English text to {language}."
+system_template = "Translate the following English text to {language}."
 prompt = ChatPromptTemplate.from_messages([
-    ("system",system_tamplate),
-    ("user","{Text}")
+    ("system",system_template),
+    ("user","{text}")
 ])
 
 parser = StrOutputParser()
@@ -24,9 +24,9 @@ chain = prompt| groq_gemma2_llm | parser
 # Add routes to the app
 app = FastAPI(title="Langchain server",
               version="0.1",
-              description="A siple api server to test langchain runnable interfaces")
+              description="A simple api server to test langchain runnable interfaces")
 
-#addingf translate route to the app
+#adding translate route to the app
 
 add_routes(
     app = app,
