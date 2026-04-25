@@ -11,9 +11,9 @@ groq_api_key = os.getenv("GROQ_API_KEY")
 groq_gemma2_llm = ChatGroq(model="llama-3.1-8b-instant", api_key=groq_api_key)
 
 
-system_tamplate = "Translate the following English text to {language}."
+system_template = "Translate the following English text to {language}."
 prompt = ChatPromptTemplate.from_messages([
-    ("system",system_tamplate),
+    ("system",system_template),
     ("user","{Text}")
 ])
 
