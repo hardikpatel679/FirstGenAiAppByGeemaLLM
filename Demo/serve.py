@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from langchain_core.prompts import ChatMessagePromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_groq import ChatGroq
 from langserve import add_routes
@@ -12,10 +12,10 @@ groq_gemma2_llm = ChatGroq(model="llama-3.1-8b-instant", api_key=groq_api_key)
 
 
 system_tamplate = "Translate the following English text to {language}."
-prompt = ChatMessagePromptTemplate.from_messages(
+prompt = ChatPromptTemplate.from_messages([
     ("system",system_tamplate),
     ("user","{Text}")
-)
+])
 
 parser = StrOutputParser()
 
@@ -30,7 +30,7 @@ app = FastAPI(title="Langchain server",
 
 add_routes(
     app = app,
-    chain = chain,
+    runnable = chain,
     path= "/translate")
 
 if __name__ == "__main__":
